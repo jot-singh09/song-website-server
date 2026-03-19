@@ -1,0 +1,23 @@
+{
+  "name": "spotify-music-server",
+  "version": "1.0.0",
+  "description": "Spotify-style music streaming server with admin panel",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": ["music", "streaming", "spotify"],
+  "author": "Karanjot Singh",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
+    "express-session": "^1.17.3",
+    "uuid": "^9.0.1",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
