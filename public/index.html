@@ -13,257 +13,245 @@
         }
 
         :root {
-            --spotify-green: #1DB954;
-            --spotify-black: #191414;
-            --spotify-dark: #121212;
-            --spotify-gray: #282828;
-            --spotify-light-gray: #b3b3b3;
-            --spotify-white: #ffffff;
-            --spotify-hover: #1ed760;
+            --primary: #1DB954;
+            --bg-dark: #000000;
+            --bg-card: #181818;
+            --text-primary: #ffffff;
+            --text-secondary: #a7a7a7;
+            --border: #282828;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background-color: var(--spotify-black);
-            color: var(--spotify-white);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
             overflow-x: hidden;
         }
 
         .app-container {
-            display: flex;
-            height: 100vh;
-            flex-direction: column;
             max-width: 480px;
             margin: 0 auto;
-            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: var(--bg-dark);
         }
 
         .main-content {
-            display: flex;
             flex: 1;
             overflow: hidden;
         }
 
         .main-view {
-            flex: 1;
-            background: linear-gradient(180deg, #1f1f1f 0%, var(--spotify-dark) 300px);
+            height: 100%;
             overflow-y: auto;
-            padding-bottom: 180px;
+            padding-bottom: 200px;
         }
 
         /* Header */
         .header {
-            padding: 16px 20px;
-            background: rgba(18, 18, 18, 0.95);
-            backdrop-filter: blur(20px);
+            background: var(--bg-dark);
+            padding: 20px;
+            border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
             z-index: 100;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
         }
 
         .header-top {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-bottom: 16px;
         }
 
         .logo-mobile {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             cursor: pointer;
-            user-select: none;
         }
 
         .logo-mobile i {
-            font-size: 28px;
-            color: var(--spotify-green);
+            font-size: 32px;
+            color: var(--primary);
         }
 
         .logo-mobile h2 {
-            font-size: 24px;
-            font-weight: 900;
-            letter-spacing: -1px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .admin-badge {
+            background: var(--primary);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 12px;
+            display: none;
+            cursor: pointer;
         }
 
         .search-bar {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 12px 16px;
             display: flex;
             align-items: center;
-            background-color: var(--spotify-white);
-            border-radius: 30px;
-            padding: 10px 16px;
             gap: 12px;
-            width: 100%;
         }
 
         .search-bar i {
-            color: var(--spotify-black);
-            font-size: 18px;
+            color: var(--text-secondary);
+            font-size: 16px;
         }
 
         .search-bar input {
             border: none;
             outline: none;
             background: none;
-            color: var(--spotify-black);
-            font-size: 14px;
-            font-weight: 500;
+            color: var(--text-primary);
+            font-size: 15px;
             width: 100%;
         }
 
         .search-bar input::placeholder {
-            color: #666;
-        }
-
-        .admin-badge {
-            background: linear-gradient(135deg, #1DB954, #1ed760);
-            padding: 8px 12px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 13px;
-            display: none;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-
-        .admin-badge:active {
-            transform: scale(0.95);
+            color: var(--text-secondary);
         }
 
         /* Content */
         .content {
-            padding: 20px 16px;
+            padding: 24px 20px;
         }
 
         .section {
-            margin-bottom: 32px;
+            margin-bottom: 40px;
         }
 
         .section-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
 
         .section-title {
-            font-size: 22px;
-            font-weight: 900;
-            letter-spacing: -1px;
+            font-size: 20px;
+            font-weight: 700;
         }
 
         .view-all {
-            color: var(--spotify-light-gray);
-            font-weight: 600;
+            color: var(--text-secondary);
             font-size: 13px;
+            font-weight: 500;
         }
 
         /* Artists Grid */
         .artists-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
+            gap: 16px;
         }
 
         .artist-card {
-            background-color: var(--spotify-gray);
-            border-radius: 12px;
-            padding: 16px 12px;
-            transition: all 0.2s;
+            background: var(--bg-card);
+            border-radius: 8px;
+            padding: 20px 16px;
+            text-align: center;
             cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid var(--border);
         }
 
-        .artist-card:active {
-            transform: scale(0.95);
-            background-color: #333;
+        .artist-card:hover {
+            background: #242424;
+            border-color: var(--primary);
         }
 
         .artist-avatar {
-            width: 100%;
-            aspect-ratio: 1;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #1DB954, #1ed760);
+            background: var(--primary);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 32px;
-            font-weight: 900;
-            margin-bottom: 12px;
-            box-shadow: 0 8px 24px rgba(29, 185, 84, 0.3);
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 auto 12px;
+            color: var(--bg-dark);
         }
 
         .artist-name {
-            font-weight: 700;
+            font-weight: 600;
             font-size: 13px;
-            margin-bottom: 6px;
-            text-align: center;
+            margin-bottom: 4px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
 
         .artist-count {
-            color: var(--spotify-light-gray);
+            color: var(--text-secondary);
             font-size: 11px;
-            font-weight: 500;
-            text-align: center;
         }
 
         /* Songs List */
         .songs-list {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 2px;
         }
 
         .song-item {
-            display: grid;
-            grid-template-columns: 40px 1fr 40px;
-            gap: 12px;
-            padding: 8px 12px;
-            border-radius: 8px;
+            background: var(--bg-card);
+            border-radius: 6px;
+            padding: 12px 16px;
+            display: flex;
             align-items: center;
-            transition: background-color 0.2s;
+            gap: 12px;
             cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid transparent;
         }
 
-        .song-item:active {
-            background-color: var(--spotify-gray);
+        .song-item:hover {
+            border-color: var(--border);
         }
 
         .song-item.active {
-            background-color: var(--spotify-gray);
+            background: #242424;
+            border-color: var(--primary);
         }
 
         .song-number {
-            text-align: center;
-            color: var(--spotify-light-gray);
-            font-weight: 500;
+            color: var(--text-secondary);
             font-size: 14px;
+            font-weight: 500;
+            min-width: 20px;
+            text-align: center;
         }
 
         .song-info {
             display: flex;
             align-items: center;
             gap: 12px;
+            flex: 1;
             min-width: 0;
         }
 
         .song-cover {
-            width: 40px;
-            height: 40px;
+            width: 48px;
+            height: 48px;
             border-radius: 4px;
-            background: linear-gradient(135deg, #1DB954, #1ed760);
+            background: var(--primary);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
+            font-size: 20px;
             flex-shrink: 0;
+            color: var(--bg-dark);
         }
 
         .song-details {
@@ -273,16 +261,16 @@
 
         .song-name {
             font-weight: 600;
-            font-size: 14px;
+            font-size: 15px;
+            margin-bottom: 4px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
 
         .song-artist {
-            color: var(--spotify-light-gray);
-            font-size: 12px;
-            font-weight: 500;
+            color: var(--text-secondary);
+            font-size: 13px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -293,17 +281,17 @@
             transition: opacity 0.2s;
         }
 
-        .song-item:active .song-actions {
+        .song-item:hover .song-actions {
             opacity: 1;
         }
 
         .action-btn {
-            width: 32px;
-            height: 32px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             border: none;
-            background-color: transparent;
-            color: var(--spotify-green);
+            background: var(--primary);
+            color: var(--bg-dark);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -319,12 +307,9 @@
             transform: translateX(-50%);
             width: 100%;
             max-width: 480px;
-            background-color: var(--spotify-gray);
-            border-top: 1px solid #000;
-            display: flex;
-            flex-direction: column;
-            padding: 12px 16px;
-            gap: 8px;
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            padding: 16px 20px;
             z-index: 1000;
         }
 
@@ -332,18 +317,20 @@
             display: flex;
             align-items: center;
             gap: 12px;
+            margin-bottom: 16px;
         }
 
         .player-cover {
-            width: 48px;
-            height: 48px;
-            border-radius: 4px;
-            background: linear-gradient(135deg, #1DB954, #1ed760);
+            width: 56px;
+            height: 56px;
+            border-radius: 6px;
+            background: var(--primary);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
+            font-size: 24px;
             flex-shrink: 0;
+            color: var(--bg-dark);
         }
 
         .player-info {
@@ -352,7 +339,7 @@
         }
 
         .player-info h4 {
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 600;
             margin-bottom: 4px;
             white-space: nowrap;
@@ -361,8 +348,8 @@
         }
 
         .player-info p {
-            font-size: 12px;
-            color: var(--spotify-light-gray);
+            font-size: 13px;
+            color: var(--text-secondary);
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -372,18 +359,19 @@
             display: flex;
             align-items: center;
             gap: 12px;
+            margin-bottom: 16px;
         }
 
         .time {
-            font-size: 11px;
-            color: var(--spotify-light-gray);
+            font-size: 12px;
+            color: var(--text-secondary);
             font-weight: 500;
             min-width: 40px;
         }
 
         .progress-bar {
             flex: 1;
-            height: 20px;
+            height: 24px;
             position: relative;
             cursor: pointer;
             display: flex;
@@ -393,88 +381,97 @@
         .progress-bg {
             width: 100%;
             height: 4px;
-            background-color: #4d4d4d;
+            background: var(--border);
             border-radius: 2px;
         }
 
         .progress-fill {
             height: 100%;
-            background-color: var(--spotify-green);
+            background: var(--primary);
             border-radius: 2px;
         }
 
         .progress-handle {
             position: absolute;
-            width: 14px;
-            height: 14px;
-            background-color: var(--spotify-white);
+            width: 12px;
+            height: 12px;
+            background: var(--text-primary);
             border-radius: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
             opacity: 0;
             pointer-events: none;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
-        .progress-bar:active .progress-handle {
+        .progress-bar:hover .progress-handle {
             opacity: 1;
         }
 
         .player-controls {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 4px;
+            justify-content: space-between;
+            gap: 8px;
         }
 
         .control-btn {
             background: none;
             border: none;
-            color: var(--spotify-light-gray);
+            color: var(--text-primary);
             cursor: pointer;
-            transition: all 0.2s;
-            font-size: 18px;
-            padding: 8px;
-            position: relative;
-        }
-
-        .control-btn:active {
-            color: var(--spotify-white);
-            transform: scale(0.9);
-        }
-
-        .control-btn.play-btn {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background-color: var(--spotify-white);
-            color: var(--spotify-black);
             font-size: 20px;
+            padding: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .control-btn:hover {
+            color: var(--primary);
+        }
+
+        .control-btn.play-btn {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: var(--bg-dark);
+            font-size: 24px;
+        }
+
+        .control-btn.play-btn:hover {
+            background: #1ed760;
+            transform: scale(1.05);
+        }
+
+        .control-btn.small {
+            font-size: 16px;
+            color: var(--text-secondary);
+        }
+
+        .control-btn.small:hover {
+            color: var(--text-primary);
         }
 
         .control-btn.skip-btn {
-            font-size: 12px;
-            font-weight: 700;
-            display: flex;
+            font-size: 14px;
+            font-weight: 600;
             flex-direction: column;
-            align-items: center;
-            padding: 4px;
+            gap: 0;
+            color: var(--text-secondary);
         }
 
         .control-btn.skip-btn i {
-            font-size: 16px;
+            font-size: 18px;
         }
 
         .control-btn.skip-btn span {
-            font-size: 8px;
-            margin-top: -2px;
+            font-size: 9px;
         }
 
         .control-btn.loop-btn.active {
-            color: var(--spotify-green);
+            color: var(--primary);
         }
 
         .control-btn.loop-btn.loop-one::after {
@@ -485,7 +482,6 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            color: var(--spotify-green);
         }
 
         /* Modal */
@@ -496,11 +492,11 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(0, 0, 0, 0.9);
-            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.85);
             z-index: 2000;
             align-items: center;
             justify-content: center;
+            padding: 20px;
         }
 
         .modal-overlay.active {
@@ -508,39 +504,50 @@
         }
 
         .modal {
-            background-color: var(--spotify-gray);
-            border-radius: 16px;
+            background: var(--bg-card);
+            border-radius: 12px;
             padding: 24px;
             max-width: 440px;
-            width: 90%;
-            max-height: 80vh;
+            width: 100%;
+            max-height: 85vh;
             overflow-y: auto;
+            border: 1px solid var(--border);
         }
 
         .modal-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
         }
 
         .modal-title {
-            font-size: 24px;
-            font-weight: 900;
-            letter-spacing: -1px;
+            font-size: 22px;
+            font-weight: 700;
         }
 
         .close-btn {
             background: none;
             border: none;
-            color: var(--spotify-light-gray);
-            font-size: 28px;
+            color: var(--text-secondary);
+            font-size: 24px;
             cursor: pointer;
             line-height: 1;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-btn:hover {
+            color: var(--text-primary);
         }
 
         .form-group {
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
 
         .form-label {
@@ -548,26 +555,26 @@
             margin-bottom: 8px;
             font-weight: 600;
             font-size: 14px;
+            color: var(--text-primary);
         }
 
         .form-input {
             width: 100%;
             padding: 12px 16px;
-            border: 2px solid #4d4d4d;
-            border-radius: 8px;
-            background-color: var(--spotify-black);
-            color: var(--spotify-white);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: var(--bg-dark);
+            color: var(--text-primary);
             font-size: 14px;
         }
 
         .form-input:focus {
             outline: none;
-            border-color: var(--spotify-green);
+            border-color: var(--primary);
         }
 
         .file-input-wrapper {
             position: relative;
-            overflow: hidden;
             width: 100%;
         }
 
@@ -576,12 +583,17 @@
             align-items: center;
             justify-content: center;
             gap: 12px;
-            padding: 16px;
-            background-color: var(--spotify-black);
-            border: 2px dashed #4d4d4d;
-            border-radius: 8px;
+            padding: 20px;
+            background: var(--bg-dark);
+            border: 2px dashed var(--border);
+            border-radius: 6px;
             cursor: pointer;
-            font-weight: 600;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .file-input-label:hover {
+            border-color: var(--primary);
         }
 
         .file-input-wrapper input[type="file"] {
@@ -590,10 +602,10 @@
         }
 
         .btn {
-            padding: 14px 32px;
+            padding: 14px 24px;
             border: none;
-            border-radius: 30px;
-            font-weight: 700;
+            border-radius: 6px;
+            font-weight: 600;
             font-size: 14px;
             cursor: pointer;
             display: flex;
@@ -601,22 +613,28 @@
             justify-content: center;
             gap: 8px;
             width: 100%;
+            transition: all 0.2s;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #1DB954, #1ed760);
-            color: var(--spotify-white);
+            background: var(--primary);
+            color: var(--bg-dark);
         }
 
-        .btn-primary:active {
-            transform: scale(0.98);
+        .btn-primary:hover {
+            background: #1ed760;
         }
 
         .btn-danger {
-            background-color: #e22134;
-            color: var(--spotify-white);
+            background: #dc2626;
+            color: var(--text-primary);
             width: auto;
             padding: 8px 16px;
+            font-size: 13px;
+        }
+
+        .btn-danger:hover {
+            background: #ef4444;
         }
 
         .songs-manage-list {
@@ -628,13 +646,14 @@
         }
 
         .manage-song-item {
-            background-color: var(--spotify-black);
-            padding: 12px;
-            border-radius: 8px;
+            background: var(--bg-dark);
+            padding: 16px;
+            border-radius: 6px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 12px;
+            gap: 16px;
+            border: 1px solid var(--border);
         }
 
         .manage-song-info {
@@ -652,40 +671,55 @@
         }
 
         .manage-song-artist {
-            color: var(--spotify-light-gray);
-            font-size: 12px;
+            color: var(--text-secondary);
+            font-size: 13px;
         }
 
         .empty-state {
             text-align: center;
-            padding: 40px 20px;
-            color: var(--spotify-light-gray);
+            padding: 60px 20px;
+            color: var(--text-secondary);
         }
 
         .empty-state i {
             font-size: 48px;
             margin-bottom: 16px;
-            opacity: 0.5;
+            opacity: 0.3;
         }
 
         .empty-state h3 {
             font-size: 18px;
             margin-bottom: 8px;
-            color: var(--spotify-white);
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .empty-state p {
+            font-size: 14px;
+        }
+
+        .divider {
+            height: 1px;
+            background: var(--border);
+            margin: 24px 0;
         }
 
         /* Scrollbar */
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 6px;
         }
 
         ::-webkit-scrollbar-track {
-            background: var(--spotify-black);
+            background: var(--bg-dark);
         }
 
         ::-webkit-scrollbar-thumb {
-            background: var(--spotify-gray);
-            border-radius: 4px;
+            background: var(--border);
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-secondary);
         }
     </style>
 </head>
@@ -755,27 +789,27 @@
             </div>
 
             <div class="player-controls">
-                <button class="control-btn loop-btn" onclick="cycleLoop()" id="loopBtn" title="Loop">
+                <button class="control-btn small loop-btn" onclick="cycleLoop()" id="loopBtn" title="Loop">
                     <i class="fas fa-repeat"></i>
                 </button>
-                <button class="control-btn skip-btn" onclick="skipBackward()" title="-10s">
+                <button class="control-btn skip-btn" onclick="skipBackward()" title="Back 10s">
                     <i class="fas fa-rotate-left"></i>
-                    <span>10</span>
+                    <span>10s</span>
                 </button>
-                <button class="control-btn" onclick="playPrevious()" title="Previous">
-                    <i class="fas fa-step-backward"></i>
+                <button class="control-btn small" onclick="playPrevious()" title="Previous">
+                    <i class="fas fa-backward-step"></i>
                 </button>
                 <button class="control-btn play-btn" onclick="togglePlay()" id="playBtn">
                     <i class="fas fa-play" id="playIcon"></i>
                 </button>
-                <button class="control-btn" onclick="playNext()" title="Next">
-                    <i class="fas fa-step-forward"></i>
+                <button class="control-btn small" onclick="playNext()" title="Next">
+                    <i class="fas fa-forward-step"></i>
                 </button>
-                <button class="control-btn skip-btn" onclick="skipForward()" title="+10s">
+                <button class="control-btn skip-btn" onclick="skipForward()" title="Forward 10s">
                     <i class="fas fa-rotate-right"></i>
-                    <span>10</span>
+                    <span>10s</span>
                 </button>
-                <button class="control-btn" onclick="toggleMute()" id="muteBtn" title="Mute">
+                <button class="control-btn small" onclick="toggleMute()" id="muteBtn" title="Mute">
                     <i class="fas fa-volume-high" id="volumeIcon"></i>
                 </button>
             </div>
@@ -811,7 +845,7 @@
             </div>
 
             <div class="form-group">
-                <h3 style="margin-bottom: 16px; font-size: 18px;">Upload New Song</h3>
+                <h3 style="margin-bottom: 16px; font-size: 16px; font-weight: 600;">Upload New Song</h3>
                 <form onsubmit="uploadSong(event)">
                     <div class="form-group">
                         <label class="form-label">Song Name</label>
@@ -825,8 +859,8 @@
                         <label class="form-label">Audio File</label>
                         <div class="file-input-wrapper">
                             <label for="songFile" class="file-input-label">
-                                <i class="fas fa-cloud-upload-alt" style="font-size: 24px;"></i>
-                                <span id="fileLabel">Choose audio file</span>
+                                <i class="fas fa-cloud-upload-alt" style="font-size: 20px;"></i>
+                                <span id="fileLabel">Choose audio file (MP3, WAV, etc.)</span>
                             </label>
                             <input type="file" id="songFile" accept="audio/*" required onchange="updateFileLabel()">
                         </div>
@@ -838,14 +872,14 @@
                 </form>
             </div>
 
-            <div style="height: 1px; background: #4d4d4d; margin: 24px 0;"></div>
+            <div class="divider"></div>
 
             <div class="form-group">
-                <h3 style="margin-bottom: 16px; font-size: 18px;">Manage Songs</h3>
+                <h3 style="margin-bottom: 16px; font-size: 16px; font-weight: 600;">Manage Songs</h3>
                 <div class="songs-manage-list" id="manageSongsList"></div>
             </div>
 
-            <div style="height: 1px; background: #4d4d4d; margin: 24px 0;"></div>
+            <div class="divider"></div>
 
             <button class="btn btn-primary" onclick="adminLogout()">
                 <i class="fas fa-sign-out-alt"></i>
